@@ -1,0 +1,20 @@
+npx react-native init BahseqelSporMajorBar
+cd BahseqelSporMajorBar //Переходим в созданную папку проекта
+// Заходишь в почту и принимаешь приглашение в git
+
+npx react-native run-android //Запускаем, проверяем работоспособность
+
+// Останавливаем все процессы (CTRL+C в терминале), выключаем эмулятор 
+
+git init
+git remote add origin https://github.com/koralweb/BahseqelSporMajorBar.git
+
+// Удаляем эти 3 файла:
+  -- App.tsx
+  -- .gitignore
+  -- android/app/src/main/java/com/BahseqelSporMajorBar/MainActivity.java
+  
+git branch -M development
+git pull origin development
+
+npx react-native run-android //Запускаем, проверяем работоспособность

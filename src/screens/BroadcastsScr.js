@@ -93,13 +93,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     margin: 10,
     borderRadius: 5,
+   
     
 
   },
-  card: {
-    flexDirection: 'row',
+ 
+   
     
-  },
+  
   daytime: {
     flexDirection: 'row',
     justifyContent: `space-between`,

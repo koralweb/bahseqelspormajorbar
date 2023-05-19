@@ -8,36 +8,65 @@ const CartProduct = ({pr}) => {
   const [cnt, setCnt] = useState(pr.count);
   return (
     <View style={styles.item}>
+      <View>
       <Image source={pr.image} style={styles.img} />
-      <Text>
-        {pr.price}€ - {pr.title}
-      </Text>
-      <Counter cnt={cnt} setCnt={setCnt} />
+      
+      </View>
+
+      
+      <View>
+      
+      <Counter style={styles.cnt} cnt={cnt} setCnt={setCnt} />
       <TouchableOpacity
         style={styles.closeBtn}
         onPress={() => prod.removeProduct(pr.id)}>
         <FontAwesomeIcon icon="close" color="#F94332" size={30} />
       </TouchableOpacity>
+        
+      </View>
+      <Text style={styles.title}>
+        {pr.price}€ - {pr.title}
+      </Text>
+     
+      
     </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   item: {
     padding: 10,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     marginHorizontal: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
   },
   img: {
     width: 100,
     height: 100,
     marginRight: 20,
   },
+  title: {
+    fontSize: 20,
+    fontWeight: 500,
+    paddingTop: 5,
+    color: 'black',
+
+  },
   closeBtn: {
     borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 80,
+    backgroundColor: 'grey',
+    width: 125,
+    height: 40,
+  },
+  cnt: {
+    alignItems: 'center',
+    marginBottom: 20,
+
   },
 });
 

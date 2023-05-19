@@ -1,16 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, Dimensions} from 'react-native';
 import React, {useState} from 'react';
 import Counter from './Counter';
 import {observer} from 'mobx-react-lite';
 import products from '../../mobx/products';
-import {height} from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+import { height } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 
 const Product = ({pr}) => {
   const [cnt, setCnt] = useState(pr.count);
@@ -22,30 +15,38 @@ const Product = ({pr}) => {
   return (
     <View style={styles.item}>
       <View>
-        <Image source={pr.image} style={styles.image} />
+      <Image source={pr.image} style={styles.image} />
       </View>
+      
       <View style={styles.wrp}>
-        <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt} />
-        <TouchableOpacity style={styles.btn} onPress={addProduct}>
-          <Text style={styles.add}>Add</Text>
-        </TouchableOpacity>
+      <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt}/>
+      <TouchableOpacity style={styles.btn} onPress={addProduct}>
+        <Text style={styles.add}>Add</Text>
+      </TouchableOpacity>
       </View>
+
       <Text style={styles.title}>
         {pr.price}€ - {pr.title}
       </Text>
-      <Text>{pr.desc}</Text>
+      <Text style={styles.desc}>{pr.desc}</Text>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
   item: {
-    borderWidth: 1,
+    borderBottomWidth: 2,
     borderColor: 'grey',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    width: Dimensions.get('window').width,
+    paddingTop: 20,
+    paddingLeft: 10,
   },
-  title: {
+  title:{
+    padding: 5,
     fontSize: 25,
     fontWeight: 500,
   },
@@ -72,6 +73,12 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 150,
+  },
+  desc: {
+    fontSize: 15,
+    fontWeight: 400,
+    paddingBottom: 15,
+    
   },
 });
 

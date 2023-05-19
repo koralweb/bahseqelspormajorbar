@@ -27,8 +27,11 @@ const Counter = ({cnt, setCnt}) => {
 const styles = StyleSheet.create({
   cont: {
     flexDirection: 'row',
-    borderWidth: 2,
+    borderWidth: 3,
     marginRight: 20,
+    borderColor: 'grey',
+    width: 125,
+    height: 50,
      
   },
   operator: {

@@ -33,7 +33,7 @@ const CartScr = ({navigation}) => {
   return (
     <View style={styles.cont}>
       <Header navigation={navigation} />
-      <Text>Корзина</Text>
+      <Text style={styles.title}>Корзина</Text>
       {products.list.filter(p => p.added).length ? (
         <ScrollView>
           {renderProduct()}
@@ -54,6 +54,14 @@ const styles = StyleSheet.create({
   },
   button: {
     borderWidth: 1,
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 500,
+    color: 'black',
+    alignSelf: `center`,
+    padding: 10,
+
   },
 });
 

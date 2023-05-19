@@ -27,7 +27,13 @@ const FoodType = ({setType}) => {
 
 const styles = StyleSheet.create({
   item: {
-    borderWidth: 1,
+    borderWidth: 4,
+    borderColor: '#C0C0C0',
+    color: '#C0C0C0',
+    padding: 5,
+    marginBottom: 15,
+    marginTop: 15,
+
   },
   foodType: {
     flexDirection: 'row',

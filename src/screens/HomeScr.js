@@ -32,6 +32,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'grey',
+
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: 500,
+    borderWidth: 2,
+    paddingLeft: 30,
+    paddingTop: 8,
+    width: 255,
+    height: 50,
+    marginBottom: 10,
+    borderRadius: 10,
+    borderWidth: 4,
+    borderColor: 'white',
+    color: 'white',
+    backgroundColor: 'grey',
+    
+    
   },
 });
 

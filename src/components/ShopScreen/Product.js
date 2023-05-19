@@ -1,9 +1,16 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import React, {useState} from 'react';
 import Counter from './Counter';
 import {observer} from 'mobx-react-lite';
 import products from '../../mobx/products';
-import { height } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+import {height} from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 
 const Product = ({pr}) => {
   const [cnt, setCnt] = useState(pr.count);
@@ -15,22 +22,18 @@ const Product = ({pr}) => {
   return (
     <View style={styles.item}>
       <View>
-      <Image source={pr.image} style={styles.image} />
+        <Image source={pr.image} style={styles.image} />
+      </View>
+      <View style={styles.wrp}>
+        <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt} />
+        <TouchableOpacity style={styles.btn} onPress={addProduct}>
+          <Text style={styles.add}>Add</Text>
+        </TouchableOpacity>
+      </View>
       <Text style={styles.title}>
         {pr.price}€ - {pr.title}
       </Text>
       <Text>{pr.desc}</Text>
-
-      </View>
-      
-      <View style={styles.wrp}>
-      <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt}/>
-      <TouchableOpacity style={styles.btn} onPress={addProduct}>
-        <Text style={styles.add}>Add</Text>
-      </TouchableOpacity>
-
-      </View>
-      
     </View>
   );
 };
@@ -39,19 +42,15 @@ const styles = StyleSheet.create({
   item: {
     borderWidth: 1,
     borderColor: 'grey',
-    flexDirection: "row",
-    width: Dimensions.get('window').width,
-   
-    
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
-  title:{
+  title: {
     fontSize: 25,
     fontWeight: 500,
-    
   },
   wrp: {
     marginLeft: 5,
-
   },
   btn: {
     borderWidth: 1,
@@ -59,13 +58,9 @@ const styles = StyleSheet.create({
     width: 125,
     height: 50,
     marginTop: 20,
-
-  
-    
   },
   cnt: {
     borderWidth: 2,
-    
   },
   add: {
     padding: 10,

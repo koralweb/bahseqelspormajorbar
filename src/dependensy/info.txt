@@ -7,14 +7,14 @@ npx react-native run-android //Запускаем, проверяем работ
 // Останавливаем все процессы (CTRL+C в терминале), выключаем эмулятор 
 
 git init
-git remote add origin https://github.com/koralweb/BahseqelSporMajorBar.git
+git remote add origin https://github.com/koralweb/bahseqelspormajorbar.git
 
 // Удаляем эти 3 файла:
   -- App.tsx
   -- .gitignore
   -- android/app/src/main/java/com/BahseqelSporMajorBar/MainActivity.java
   
-git branch -M development
-git pull origin development
+git branch -M dev
+git pull origin dev
 
 npx react-native run-android //Запускаем, проверяем работоспособность

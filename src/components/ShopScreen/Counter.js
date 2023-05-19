@@ -32,26 +32,21 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     width: 125,
     height: 50,
-     
   },
   operator: {
     padding: 5,
-    
-    
   },
   text: {
     margin: 5,
     fontSize: 20,
-    fontWeight: 700,
-
+    fontWeight: '700',
   },
   cnt: {
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
     fontSize: 20,
-    fontWeight: 900,
-
+    fontWeight: '900',
   },
 });
 

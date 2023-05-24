@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     width: 125,
     height: 50,
+    paddingLeft: 15,
+    marginBottom: 15,
+    
   },
   operator: {
     padding: 5,
@@ -40,6 +43,7 @@ const styles = StyleSheet.create({
     margin: 5,
     fontSize: 20,
     fontWeight: '700',
+    
   },
   cnt: {
     marginLeft: 10,

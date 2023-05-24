@@ -35,12 +35,12 @@ const CartScr = ({navigation}) => {
       <Header navigation={navigation} />
       <Text style={styles.title}>Корзина</Text>
       {products.list.filter(p => p.added).length ? (
-        <ScrollView>
+        <ScrollView >
           {renderProduct()}
           {renderBtn()}
         </ScrollView>
       ) : (
-        <Text>В корзине нет товаров</Text>
+        <Text style={styles.text}>В корзине нет товаров</Text>
       )}
       <MenuBtn />
       <Menu navigation={navigation} />
@@ -54,6 +54,16 @@ const styles = StyleSheet.create({
   },
   button: {
     borderWidth: 1,
+    marginTop: 30,
+    backgroundColor: 'grey',
+    alignSelf: `center`,
+    fontSize: 20,
+    paddingLeft: 100,
+    color: "black",
+    paddingTop: 5,
+    width: 300,
+    height: 40,
+    
   },
   title: {
     fontSize: 25,
@@ -63,6 +73,13 @@ const styles = StyleSheet.create({
     padding: 10,
 
   },
+  text: {
+    fontSize: 20,
+    fontWeight: 600,
+
+  },
+  
+ 
 });
 
 export default observer(CartScr);

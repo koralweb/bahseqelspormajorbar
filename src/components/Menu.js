@@ -11,12 +11,12 @@ import menu from '../mobx/menu';
 
 // Поле link - НЕ МЕНЯТЬ!!!!
 const pages = [
-  {link: 'Home', name: 'Главная'},
-  {link: 'Market', name: 'Продукты'},
-  {link: 'Booking', name: 'Бронирование'},
-  {link: 'Broadcasts', name: 'Трансляции'},
-  {link: 'Contacts', name: 'Контакты'},
-  {link: 'Cart', name: 'Корзина'},
+  {link: 'Home', name: 'Ana Sayfa'},
+  {link: 'Market', name: 'Ürünler'},
+  {link: 'Booking', name: 'Rezervasyon'},
+  {link: 'Broadcasts', name: 'Yayınlar'},
+  {link: 'Contacts', name: 'Kişiler'},
+  {link: 'Cart', name: 'Araba'},
 ];
 
 const Menu = ({navigation}) => {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 500,
     paddingBottom: 15,
-    
+
 
   },
 });

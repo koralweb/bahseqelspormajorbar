@@ -10,20 +10,20 @@ const ContactsScr = ({navigation}) => {
     <View style={styles.cont}>
       <Header navigation={navigation} />
 
-      <Text style={styles.title}>Контакты</Text>
+      <Text style={styles.title}>Kişiler</Text>
       <View style={styles.card}>
-        <Text style={styles.item}>Адрес</Text>
-        <Text style={styles.desc}>Москва, ул Осиновая 2</Text>
+        <Text style={styles.item}>Adres</Text>
+        <Text style={styles.desc}>Büyükesat Mah, Uğur Mumcu Cd. 82/A, 06700 Çankaya/Ankara</Text>
 
       </View>
       <View style={styles.card}>
-        <Text style={styles.item}>Телефон</Text>
-        <Text style={styles.desc}>+7888888888</Text>
+        <Text style={styles.item}>Telefon</Text>
+        <Text style={styles.desc}>+90 312 437 13 32</Text>
 
       </View>
       <View style={styles.card}>
-        <Text style={styles.item}>Часы работы</Text>
-        <Text style={styles.desc}>09.00-21.00</Text>
+        <Text style={styles.item}>Açılış saatleri</Text>
+        <Text style={styles.desc}>00.00-24.00</Text>
 
       </View>
       <MenuBtn />
@@ -44,18 +44,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   item: {
-    backgroundColor: '#909090',
+    backgroundColor: '#008eaf',
     paddingLeft: 10,
     fontSize: 20,
     fontWeight: 500,
-
+color:'#fff'
 
   },
   card: {
     margin: 10,
     borderWidth: 1,
-    borderRadius: 10,
-
+borderColor:'#008eaf'
   },
   desc: {
     alignSelf: `center`,

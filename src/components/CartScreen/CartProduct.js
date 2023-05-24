@@ -10,27 +10,27 @@ const CartProduct = ({pr}) => {
     <View style={styles.item}>
       <View>
       <Image source={pr.image} style={styles.img} />
-      
+
       </View>
 
-      
+
       <View>
-      
+
       <Counter style={styles.cnt} cnt={cnt} setCnt={setCnt} />
       <TouchableOpacity
         style={styles.closeBtn}
         onPress={() => prod.removeProduct(pr.id)}>
         <FontAwesomeIcon icon="close" color="#F94332" size={30} />
       </TouchableOpacity>
-        
+
       </View>
       <Text style={styles.title}>
-        {pr.price}€ - {pr.title}
+        {Math.round(pr.price/50)}€ - {pr.title}
       </Text>
-     
-      
+
+
     </View>
-    
+
   );
 };
 
@@ -56,10 +56,9 @@ const styles = StyleSheet.create({
 
   },
   closeBtn: {
-    borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: '#008eaf',
     width: 125,
     height: 40,
   },

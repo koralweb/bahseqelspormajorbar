@@ -22,11 +22,20 @@ class Products {
     this.list.find(el => el.id === id).added = false;
   }
 
+  clearCart() {
+    this.list = [...this.list].map(el => ({
+      ...el,
+      added: false,
+      count: 1
+    }))
+  }
+
   constructor() {
     makeObservable(this, {
       list: observable,
       addProduct: action,
       removeProduct: action,
+      clearCart: action
     });
   }
 }

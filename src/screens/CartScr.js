@@ -24,8 +24,8 @@ const CartScr = ({navigation}) => {
     return (
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => navigation.push('Booking', {cart: true})}>
-        <Text style={styles.button}>Оформить</Text>
+        onPress={() => navigation.push('Booking', {fromCart: true})}>
+        <Text style={styles.button}>Tasarım</Text>
       </TouchableOpacity>
     );
   };
@@ -33,14 +33,14 @@ const CartScr = ({navigation}) => {
   return (
     <View style={styles.cont}>
       <Header navigation={navigation} />
-      <Text style={styles.title}>Корзина</Text>
+      <Text style={styles.title}>Araba</Text>
       {products.list.filter(p => p.added).length ? (
         <ScrollView >
           {renderProduct()}
           {renderBtn()}
         </ScrollView>
       ) : (
-        <Text style={styles.text}>В корзине нет товаров</Text>
+        <Text style={styles.text}>Sepetinizde hiçbir ürün bulunmamaktadır</Text>
       )}
       <MenuBtn />
       <Menu navigation={navigation} />
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 1,
     marginTop: 30,
-    backgroundColor: 'grey',
+    backgroundColor: '#008eaf',
     alignSelf: `center`,
     fontSize: 20,
     paddingLeft: 100,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     width: 300,
     height: 40,
-    
+color:'#fff'
   },
   title: {
     fontSize: 25,
@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 600,
-
+textAlign: 'center'
   },
-  
- 
+
+
 });
 
 export default observer(CartScr);

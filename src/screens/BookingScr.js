@@ -9,57 +9,71 @@ import React, {useEffect, useState} from 'react';
 import Header from '../components/Header';
 import MenuBtn from '../components/MenuBtn';
 import Menu from '../components/Menu';
-import { height } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+import products from '../mobx/products'
 
-const BookingScr = ({navigation}) => {
+const BookingScr = ({navigation, route}) => {
+  console.log(route);
   const [persons, setPersons] = useState('');
   const [outside, setOutside] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
+
+  const order = () => {
+    if(route.params) products.clearCart()
+    navigation.push('Checkout')
+  }
 
   return (
     <View style={styles.cont}>
       <Header navigation={navigation} />
 
       <View style={styles.cont}>
-        <Text style={styles.title}>Бронирование столика</Text>
-        <Text style={styles.desc}>
-          Хотите забронировать стол? Отправьте заявку на бронирование в нашем
-          кафе. И мы обязательно вам позвоним!
-        </Text>
-        <Text style={styles.label}>Количество персон</Text>
+        {route.params ? <>
+            <Text style={styles.title}>Çıkış yapmak</Text>
+            <Text style={styles.desc}>
+              Siparişinizi verin, sizi arayalım!
+            </Text>
+          </>
+          : <>
+          <Text style={styles.title}>Masa rezervasyonu</Text>
+          <Text style={styles.desc}>
+            Bir masa ayırtmak ister misiniz? Rezervasyon talebinizi bize iletin
+            kafe. Ve kesinlikle sizi arayacağız!
+          </Text>
+            <Text style={styles.label}>Masa düzenlemesi</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={setOutside}
+              value={outside}
+              placeholder="İçeride mi yoksa dışarıda mı?"
+            />
+        </>}
+        <Text style={styles.label}>Kişi Numarası</Text>
         <TextInput
           style={styles.input}
           onChangeText={setPersons}
           value={persons}
-          placeholder="Количество персон"
+          placeholder="Kişi Numarası"
           keyboardType="numeric"
         />
-        <Text style={styles.label}>Расположение стола</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setOutside}
-          value={outside}
-          placeholder="В помещении или на улице?"
-        />
-        <Text style={styles.label}>Номер телефона</Text>
+        <Text style={styles.label}>Telefon numarası</Text>
         <TextInput
           style={styles.input}
           onChangeText={setPhone}
           value={phone}
-          placeholder="Номер телефона"
+          placeholder="Telefon numarası"
         />
-        <Text style={styles.label}>Дата и время</Text>
+        <Text style={styles.label}>Tarih ve saat</Text>
         <TextInput
           style={styles.input}
           onChangeText={setDate}
           value={date}
-          placeholder="Дата и время"
+          placeholder="Tarih ve saat"
         />
         <TouchableOpacity
           style={styles.btn}
-          onPress={() => navigation.push('Checkout')}>
-          <Text style={styles.button}>Оформить</Text>
+          onPress={order}>
+          <Text style={styles.button}>Tasarım</Text>
         </TouchableOpacity>
       </View>
       <MenuBtn />
@@ -71,7 +85,7 @@ const BookingScr = ({navigation}) => {
 const styles = StyleSheet.create({
   cont: {
     flex: 1,
-    
+
   },
   title: {
     fontSize: 25,
@@ -82,7 +96,7 @@ const styles = StyleSheet.create({
   },
   desc: {
     alignSelf: `center`,
-    paddingBottom: 10, 
+    paddingBottom: 10,
   },
   label: {
     color: 'black',
@@ -107,13 +121,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 270,
     height: 50,
-    backgroundColor: '#909090',  
+    backgroundColor: '#008eaf',
   },
   button: {
     alignSelf: `center`,
     paddingTop: 10,
     fontSize: 20,
     fontWeight: 800,
+    color:'#fff'
   },
 });
 

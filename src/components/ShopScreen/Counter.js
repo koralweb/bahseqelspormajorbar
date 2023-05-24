@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderWidth: 3,
     marginRight: 20,
-    borderColor: 'grey',
+    borderColor: '#008eaf',
     width: 125,
     height: 50,
     paddingLeft: 15,
     marginBottom: 15,
-    
+    borderRadius:10
   },
   operator: {
     padding: 5,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     margin: 5,
     fontSize: 20,
     fontWeight: '700',
-    
+
   },
   cnt: {
     marginLeft: 10,

@@ -1,25 +1,37 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MenuBtn from '../components/MenuBtn';
 import Menu from '../components/Menu';
+
 
 function HomeScr({navigation}) {
   return (
     <View style={styles.cont}>
-      <TouchableOpacity onPress={() => navigation.push('Market')}>
-        <Text style={styles.text}>Продукты</Text>
+      <Image source={require('../assets/icon.png')} style={styles.icon} />
+      <TouchableOpacity
+        onPress={() => navigation.push('Market')}
+        style={styles.item}>
+        <Text style={styles.text}>Ürünler</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Booking')}>
-        <Text style={styles.text}>Бронирование</Text>
+      <TouchableOpacity
+        onPress={() => navigation.push('Booking')}
+        style={styles.item}>
+        <Text style={styles.text}>Rezervasyon</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Broadcasts')}>
-        <Text style={styles.text}>Трансляции</Text>
+      <TouchableOpacity
+        onPress={() => navigation.push('Broadcasts')}
+        style={styles.item}>
+        <Text style={styles.text}>Yayınlar</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Contacts')}>
-        <Text style={styles.text}>Контакты</Text>
+      <TouchableOpacity
+        onPress={() => navigation.push('Contacts')}
+        style={styles.item}>
+        <Text style={styles.text}>Kişiler</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Cart')}>
-        <Text style={styles.text}>Корзина</Text>
+      <TouchableOpacity
+        onPress={() => navigation.push('Cart')}
+        style={styles.item}>
+        <Text style={styles.text}>Araba</Text>
       </TouchableOpacity>
       <MenuBtn />
       <Menu navigation={navigation} />
@@ -32,13 +44,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'grey',
-
+    backgroundColor: '#008eaf',
   },
   text: {
     fontSize: 25,
     fontWeight: 500,
-    borderWidth: 2,
     paddingLeft: 30,
     paddingTop: 8,
     width: 255,
@@ -48,9 +58,14 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: 'white',
     color: 'white',
-    backgroundColor: 'grey',
-    
-    
+  },
+  icon: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+  },
+  item: {
+    backgroundColor: '#008eaf',
   },
 });
 

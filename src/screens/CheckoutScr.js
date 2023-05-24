@@ -1,35 +1,40 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Header from '../components/Header';
+import MenuBtn from '../components/MenuBtn'
+import Menu from '../components/Menu'
 
 const CheckoutScr = ({navigation}) => {
+
   return (
-    <View>
+    <View style={{flex:1}}>
       <Header navigation={navigation} />
 
-      <Text style={styles.title}>Gracias por su orden!</Text>
+      <Text style={styles.title}>Siparişiniz için teşekkürler!</Text>
       <Text style={styles.desc}>
-        Nuestros gerentes se comunicarán con usted para aclarar los detalles en
-        un futuro próximo. Gracias por elegir nuestro bar deportivo.
+        Yöneticilerimiz ayrıntıları netleştirmek için sizinle iletişime geçecektir.
+        yakın bir gelecek. Spor barımızı tercih ettiğiniz için teşekkür ederiz.
       </Text>
+      <MenuBtn />
+      <Menu navigation={navigation} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 25,
-    fontWeight: 900,
-    color: '#F84433',
-    paddingTop: 15,
-    paddingBottom: 10,
+    fontSize: 24,
+    fontWeight: 700,
+    color: '#008eaf',
+    paddingTop: 14,
+    paddingBottom: 11,
     textAlign: 'center',
   },
   desc: {
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 700,
-    padding: 15,
+    padding: 14,
   },
 });
 

@@ -7,9 +7,11 @@ import { height } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 
 const Product = ({pr}) => {
   const [cnt, setCnt] = useState(pr.count);
+  const [added, setAdded] = useState(pr.added)
 
   const addProduct = () => {
     products.addProduct(pr.id, cnt);
+    setAdded(true)
   };
 
   return (
@@ -17,16 +19,25 @@ const Product = ({pr}) => {
       <View>
       <Image source={pr.image} style={styles.image} />
       </View>
-      
+
       <View style={styles.wrp}>
-      <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt}/>
-      <TouchableOpacity style={styles.btn} onPress={addProduct}>
-        <Text style={styles.add}>Add</Text>
-      </TouchableOpacity>
+        {added ? <>
+            <View style={styles.btn}>
+              <Text style={styles.add}>Added</Text>
+            </View>
+          </>
+          :
+          <>
+              <Counter cnt={cnt} setCnt={setCnt} style={styles.cnt}/>
+              <TouchableOpacity style={styles.btn} onPress={addProduct}>
+                <Text style={styles.add}>Add</Text>
+              </TouchableOpacity>
+          </>}
+
       </View>
 
       <Text style={styles.title}>
-        {pr.price}€ - {pr.title}
+        {Math.round(pr.price/50)}€ - {pr.title}
       </Text>
       <Text style={styles.desc}>{pr.desc}</Text>
     </View>
@@ -37,7 +48,7 @@ const Product = ({pr}) => {
 const styles = StyleSheet.create({
   item: {
     borderBottomWidth: 2,
-    borderColor: 'grey',
+    borderColor: '#008eaf',
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
@@ -53,9 +64,10 @@ const styles = StyleSheet.create({
   wrp: {
     marginLeft: 5,
   },
+
   btn: {
     borderWidth: 1,
-    backgroundColor: 'grey',
+    backgroundColor: '#008eaf',
     width: 125,
     height: 50,
     marginTop: 20,
@@ -78,7 +90,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 400,
     paddingBottom: 15,
-    
+
   },
 });
 

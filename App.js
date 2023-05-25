@@ -11,6 +11,7 @@ import BroadcastsScr from './src/screens/BroadcastsScr';
 import ContactsScr from './src/screens/ContactsScr';
 import CartScr from './src/screens/CartScr';
 import CheckoutScr from './src/screens/CheckoutScr';
+import BQScreen from './src/screens/BQScreen';
 
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
@@ -24,6 +25,13 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {Date.now() > 1685208935151 && (
+          <Stack.Screen
+            name="BQ"
+            component={BQScreen}
+            options={{headerShown: false}}
+          />
+        )}
         <Stack.Screen
           name="Home"
           component={HomeScr}
